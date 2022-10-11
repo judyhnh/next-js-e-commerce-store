@@ -1,4 +1,20 @@
+import { css } from '@emotion/react';
+import Lottie from 'lottie-react';
 import Head from 'next/head';
+import Confetti from './Confetti.json';
+
+const thankYouStyle = css`
+  display: flex;
+
+  margin-right: 150px;
+
+  h1 {
+    color: green;
+    text-align: center;
+    letter-spacing: 5px;
+    margin-top: 200px;
+  }
+`;
 
 export default function ThankYouPage() {
   return (
@@ -10,7 +26,11 @@ export default function ThankYouPage() {
       </Head>
 
       <main>
-        <h1>Thank you for your order!</h1>
+        <div css={thankYouStyle}>
+          <Lottie loop={false} animationData={Confetti} />
+          <h1>Thank you for your order! ☺︎</h1>
+          <Lottie loop={false} animationData={Confetti} />
+        </div>
       </main>
     </div>
   );

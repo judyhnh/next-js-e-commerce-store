@@ -71,8 +71,10 @@ const paymentStyle = css`
 
 export default function CheckOut(props) {
   const router = useRouter();
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    // set cart in header back to 0
     props.setCardCookieCart([]);
     router.push('/cart/thankyou').catch(() => {});
   };
