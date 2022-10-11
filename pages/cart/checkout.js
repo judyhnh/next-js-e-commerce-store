@@ -1,12 +1,18 @@
 import { css } from '@emotion/react';
+import { SERVER_PROPS_ID } from 'next/dist/shared/lib/constants';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const pageContentWrapper = css`
   margin-bottom: 200px;
 `;
-export default function CheckOut() {
+export default function CheckOut(props) {
   const router = useRouter();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.setCardCookieCart([]);
+    router.push('/cart/thankyou').catch(() => {});
+  };
 
   return (
     <div css={pageContentWrapper}>
@@ -21,7 +27,7 @@ export default function CheckOut() {
       <main>
         <h1>- Continue with your order -</h1>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
             <p>Billing</p>
             <label>
