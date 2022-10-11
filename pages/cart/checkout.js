@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { getCards } from '../../database/connect';
 
 const pageContentWrapper = css`
   margin-bottom: 200px;
@@ -67,6 +68,14 @@ const paymentStyle = css`
   input {
     text-align: center;
   }
+  .totalStyle {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    align-items: center;
+    border-top: 3px solid green;
+    font-size: 30px;
+  }
 `;
 
 export default function CheckOut(props) {
@@ -78,6 +87,18 @@ export default function CheckOut(props) {
     props.setCardCookieCart([]);
     router.push('/cart/thankyou').catch(() => {});
   };
+  function totalSumOfCards(currentCart) {
+    return props.currentCart.reduce((accumulator, product) => {
+      return accumulator + product.price * product.cart;
+    }, 0);
+  }
+  function totalAmountOfCards(currentCart) {
+    return props.currentCart
+      .map((product) => product.cart)
+      .reduce((totalAmount, currentAmount) => totalAmount + currentAmount, 0);
+  }
+  const totalSum = totalSumOfCards(props.currentCardsCart);
+  const totalAmount = totalAmountOfCards(props.currentCardsCart);
 
   return (
     <div css={pageContentWrapper}>
@@ -159,6 +180,10 @@ export default function CheckOut(props) {
                   data-test-id="checkout-security-code"
                 />
               </label>
+              <div className="totalStyle">
+                <span>Total amount of Cards: {totalAmount}</span>
+                <span>Total Sum: {totalSum} Eur.-</span>
+              </div>
             </div>
             <button data-test-id="checkout-confirm-order">Confirm Order</button>
           </form>
@@ -166,4 +191,18 @@ export default function CheckOut(props) {
       </main>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const cards = await getCards();
+  const currentCookies = context.req.cookies.cart
+    ? JSON.parse(context.req.cookies.cart)
+    : [];
+  const currentCart = currentCookies.map((item) => {
+    const cardsInCart = cards.find((card) => card.id === item.id);
+    return { ...cardsInCart, ...item };
+  });
+  return {
+    props: { currentCart },
+  };
 }
