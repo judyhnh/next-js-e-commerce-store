@@ -11,8 +11,7 @@ const indexWrapperStyle = css`
 `;
 
 const cardSetStyles = css`
-  margin-left: 30px;
-  margin-bottom: 30px;
+  margin: 0 0 30px 30px;
   border: 3px dashed green;
   padding: 10px;
   font-size: 20px;
@@ -25,18 +24,16 @@ const cardSetStyles = css`
 `;
 
 const h1Style = css`
-  margin-top: 100px;
+  margin: 100px 0 50px 0;
   text-align: center;
   letter-spacing: 5px;
-  margin-bottom: 50px;
 `;
 
 const imgStyle = css`
   float: left;
-  margin-left: 30px;
+  margin: 25px 0 0 30px;
   width: 500px;
   padding: 0;
-  margin-top: 25px;
 `;
 const contentStyle = css`
   display: flex;
@@ -44,9 +41,9 @@ const contentStyle = css`
 `;
 const textStyles = css`
   margin-left: 20px;
-
   padding: 0 30px;
   width: 500px;
+
   h2 {
     text-align: center;
     padding: 10px;
@@ -64,10 +61,9 @@ const textStyles = css`
   }
 `;
 const textContainerStyle = css`
-  margin-left: 15px;
   font-size: 30px;
   padding: 0 20px 20px 20px;
-  margin-bottom: 80px;
+  margin: 0 0 80px 15px;
   text-align: center;
 `;
 const productNameStyle = css`

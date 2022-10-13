@@ -49,9 +49,7 @@ const formContainer = css`
     flex-direction: column;
   }
   input {
-    margin-bottom: 20px;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 10px 0 20px 10px;
     border: 2px dashed green;
     padding: 10;
     width: 150px;

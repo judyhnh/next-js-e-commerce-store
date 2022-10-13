@@ -14,13 +14,11 @@ const imgStyle = css`
 
 const contentContainer = css`
   background-color: black;
-  margin-left: 500px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   display: inline-block;
   width: 800px;
   color: green;
-  margin-bottom: 100px;
-  margin-top: 20px;
+  margin: 20px 0 100px 500px;
   padding: 100px;
   text-align: center;
   p {
@@ -33,10 +31,7 @@ const contentContainer = css`
 
 const title = css`
   color: green;
-  margin: 0;
-  margin-bottom: 0;
-  margin-top: 100px;
-  margin-left: 200px;
+  margin: 100px 0 0 200px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   width: 100vw;
   background-color: black;
@@ -47,8 +42,7 @@ const linkStyle = css`
   background-color: black;
   color: green;
   font-size: 50px;
-  margin-bottom: 900px;
-  margin-top: 0;
+  margin: 0 0 900px 0;
   letter-spacing: 10px;
   height: 100px;
   text-align: center;

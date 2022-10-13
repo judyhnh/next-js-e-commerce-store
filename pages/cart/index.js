@@ -121,9 +121,8 @@ const amountPriceContainer = css`
   }
 `;
 const h1Style = css`
-  margin-bottom: 80px;
+  margin: 50px 0 80px 0;
   text-align: center;
-  margin-top: 50px;
   letter-spacing: 8px;
 `;
 

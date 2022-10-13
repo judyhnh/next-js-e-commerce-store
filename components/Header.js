@@ -43,14 +43,11 @@ const navStyles = css`
 
 const alignRight = css`
   float: right;
-  margin-top: 15px;
-  margin-right: 20px;
+  margin: 15px 20px 0 0;
 `;
 const alignLeft = css`
   float: left;
-  margin-right: 5px;
-  margin-left: 13px;
-  margin-top: 10px;
+  margin-top: 10px 5px 0 13px;
   color: rgba(0, 153, 0, 0.6);
   font-size: 25px;
   letter-spacing: 2px;
