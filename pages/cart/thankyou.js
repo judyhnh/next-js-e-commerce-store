@@ -16,9 +16,13 @@ const thankYouStyle = css`
   }
 `;
 
+const contentWrapper = css`
+  margin: 0 0 300px 70px;
+`;
+
 export default function ThankYouPage() {
   return (
-    <div>
+    <div css={contentWrapper}>
       <Head>
         <title>Thank you</title>
         <meta name="description" content="Thank you for your order" />

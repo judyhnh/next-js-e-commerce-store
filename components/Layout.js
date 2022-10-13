@@ -3,8 +3,7 @@ import Footer from './Footer';
 import Header from './Header';
 
 const mainStyles = css`
-  padding: 30px;
-  margin-left: 120px;
+  margin: 0;
 `;
 
 export default function Layout(props) {

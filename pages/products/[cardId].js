@@ -11,9 +11,10 @@ const cardSetStyles = css`
   font-size: 20px;
   display: flex;
   flex-wrap: wrap;
-
+  flex-direction: center;
+  margin-left: 330px;
   width: 800px;
-  margin-left: 180px;
+
   margin-top: 50px;
   margin-bottom: 200px;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,

@@ -4,10 +4,9 @@ import { useRouter } from 'next/router';
 import { getCards } from '../../database/connect';
 
 const pageContentWrapper = css`
-  margin-bottom: 200px;
-  margin-top: 50px;
-  width: 900px;
-  margin-left: 100px;
+  display: flex;
+  margin: 50px 0 300px 200px;
+
   h1 {
     text-align: center;
   }
@@ -50,16 +49,26 @@ const formContainer = css`
     flex-direction: column;
   }
   input {
+    margin-bottom: 20px;
     margin-left: 10px;
-    flex-direction: column;
+    margin-top: 10px;
     border: 2px dashed green;
-    height: 25px;
+    padding: 10;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-family: 'Amatic SC';
+    font-size: 25px;
+    color: green;
   }
   label {
     font-size: 25px;
     flex-direction: column;
-
+    align-self: center;
     margin-left: 50px;
+  }
+  .nameContainer {
+    display: flex;
   }
 `;
 const paymentStyle = css`
@@ -87,12 +96,12 @@ export default function CheckOut(props) {
     props.setCardCookieCart([]);
     router.push('/cart/thankyou').catch(() => {});
   };
-  function totalSumOfCards(currentCart) {
+  function totalSumOfCards() {
     return props.currentCart.reduce((accumulator, product) => {
       return accumulator + product.price * product.cart;
     }, 0);
   }
-  function totalAmountOfCards(currentCart) {
+  function totalAmountOfCards() {
     return props.currentCart
       .map((product) => product.cart)
       .reduce((totalAmount, currentAmount) => totalAmount + currentAmount, 0);
@@ -114,9 +123,8 @@ export default function CheckOut(props) {
         <h1>- Continue with your order -</h1>
         <div css={formContainer}>
           <form onSubmit={handleSubmit} className="formStyle">
-            <div>
-              <p>⇢ Billing</p>
-
+            <p>⇢ Billing</p>
+            <div className="nameContainer">
               <label>
                 First Name:
                 <input required data-test-id="checkout-first-name" />
@@ -125,20 +133,23 @@ export default function CheckOut(props) {
               <label>
                 Last Name: <input required data-test-id="checkout-last-name" />
               </label>
+
               <label>
                 E-Mail:
                 <input required type="email" data-test-id="checkout-email" />
               </label>
             </div>
+            <p>⇢ Shipping</p>
             <div>
-              <p>⇢ Shipping</p>
               <label>
                 Address:
                 <input required data-test-id="checkout-address" />
               </label>
+
               <label>
                 City: <input required data-test-id="checkout-city" />
               </label>
+
               <label>
                 Postal Code:
                 <input
@@ -147,6 +158,7 @@ export default function CheckOut(props) {
                   data-test-id="checkout-postal-code"
                 />
               </label>
+
               <label>
                 Country: <input required data-test-id="checkout-country" />
               </label>
@@ -182,7 +194,7 @@ export default function CheckOut(props) {
               </label>
               <div className="totalStyle">
                 <span>Total amount of Cards: {totalAmount}</span>
-                <span>Total Sum: {totalSum} Eur.-</span>
+                <span>Total Sum: {totalSum} EUR</span>
               </div>
             </div>
             <button data-test-id="checkout-confirm-order">Confirm Order</button>

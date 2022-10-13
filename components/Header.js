@@ -5,10 +5,9 @@ import Link from 'next/link';
 const navStyles = css`
   font-family: 'Stalinist One';
 
-  background-color: rgba(42, 141, 42, 0.19);
   align-content: right;
   overflow: hidden;
-  height: 50px;
+  height: 80px;
   a {
     text-decoration: none;
     color: #18272f;
@@ -51,6 +50,7 @@ const alignLeft = css`
   float: left;
   margin-right: 5px;
   margin-left: 13px;
+  margin-top: 10px;
   color: rgba(0, 153, 0, 0.6);
   font-size: 25px;
   letter-spacing: 2px;
@@ -71,15 +71,15 @@ export default function Header(props) {
       <nav css={navStyles}>
         <div css={alignRight}>
           <Link href="/">About</Link>
-          <Link href="/products" data-test-id="products-link">
-            Products
-          </Link>
+          <Link href="/products">Products</Link>
           <Link href="/cart" data-test-id="cart-link">
             Cart
           </Link>
           <p>[{totalCards}]</p>
         </div>
+
         <Image src="/droneLogo.png" width="50px" height="50px" />
+
         <div css={alignLeft}>Game of Drones</div>
       </nav>
     </header>

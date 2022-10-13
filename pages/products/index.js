@@ -25,8 +25,10 @@ const cardSetStyles = css`
 `;
 
 const h1Style = css`
+  margin-top: 100px;
   text-align: center;
   letter-spacing: 5px;
+  margin-bottom: 50px;
 `;
 
 const imgStyle = css`
@@ -65,7 +67,7 @@ const textContainerStyle = css`
   margin-left: 15px;
   font-size: 30px;
   padding: 0 20px 20px 20px;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
   text-align: center;
 `;
 const productNameStyle = css`
@@ -116,7 +118,7 @@ export default function ProductIndex(props) {
                   </Link>
                   <div> Summary: {set.text}</div>
                   <strong>
-                    <h3> {set.price} EUR.- </h3>
+                    <h3> {set.price} EUR </h3>
                   </strong>
                 </div>
               </div>

@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 
 const footerStyle = css`
-  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;

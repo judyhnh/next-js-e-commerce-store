@@ -87,7 +87,7 @@ const amountPriceContainer = css`
   flex-direction: column;
   justify-content: space-between;
   float: right;
-  margin-right: 195px;
+  margin-right: 283px;
   font-size: 25px;
   margin-top: 20px;
   padding: 10px 20px;
@@ -155,7 +155,7 @@ const cartEmptyStyle = css`
 `;
 
 const pageContentWrapper = css`
-  margin-bottom: 200px;
+  margin-bottom: 500px;
 `;
 
 export default function CartIndex(props) {
@@ -290,30 +290,11 @@ export default function CartIndex(props) {
             </div>
             <div css={amountPriceContainer}>
               <p>Total Amount: {totalAmount} </p>
-              <p>Total Price: {totalSum} EUR.-</p>
+              <p>Total Price: {totalSum} EUR</p>
               <Link href="/cart/checkout">
                 <button>Continue with Payment</button>
               </Link>
             </div>
-
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
           </div>
         )}
       </main>
