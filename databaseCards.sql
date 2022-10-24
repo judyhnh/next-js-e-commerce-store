@@ -4,7 +4,7 @@ CREATE TABLE cards(
   text varchar(50) NOT NULL,
   src varchar(50) NOT NULL,
   alt varchar(50) NOT NULL,
-  price integer
+  price integer NOT NULL
 );
 
 INSERT INTO cards

@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { cardSets } from '../../database/cardSet';
+import { getCardById } from '../../database/cardSet';
 
 const cardSetStyles = css`
   border: 3px solid green;
@@ -201,12 +201,11 @@ export default function Card(props) {
   );
 }
 
-export function getServerSideProps(context) {
+export async function getServerSideProps(context) {
   // set dynamic route
   const cardId = parseInt(context.query.cardId);
-  const cardMatches = cardSets.find((card) => {
-    return card.id === cardId;
-  });
+  // single card directly from database
+  const cardMatches = await getCardById(cardId);
 
   // error msg if cardId not valid
   if (typeof cardMatches === 'undefined') {

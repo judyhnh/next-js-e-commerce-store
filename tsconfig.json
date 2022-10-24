@@ -22,8 +22,8 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "incremental": true
+    "incremental": true,
+    "noUncheckedIndexedAccess": true
   },
   "include": [
     "**/.eslintrc.cjs",

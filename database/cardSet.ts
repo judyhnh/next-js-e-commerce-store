@@ -1,3 +1,5 @@
+import { sql } from './connect';
+
 export const cardSets = [
   {
     id: 1,
@@ -120,3 +122,29 @@ export const cardSets = [
     price: 100,
   },
 ];
+
+export type Card = {
+  id: number;
+  name: string;
+  text: string;
+  src: string;
+  alt: string;
+  price: number;
+};
+
+export async function getCards() {
+  const cards = await sql<Card[]>`
+SELECT * FROM cards;
+
+`;
+
+  return cards;
+}
+
+export async function getCardById(id: number) {
+  const [card] = await sql<Card[]>`
+    SELECT * FROM cards WHERE id = ${id}
+    `;
+
+  return card;
+}

@@ -49,11 +49,11 @@ const formContainer = css`
     flex-direction: column;
   }
   input {
-    margin-top: 10px 0 20px 10px;
+    margin-left: 5px;
     border: 2px dashed green;
     padding: 10;
     width: 150px;
-    height: 50px;
+    height: 30px;
     text-align: center;
     font-family: 'Amatic SC';
     font-size: 25px;
@@ -74,6 +74,7 @@ const paymentStyle = css`
 
   input {
     text-align: center;
+    margin-left: 5px;
   }
   .totalStyle {
     display: flex;
@@ -82,6 +83,7 @@ const paymentStyle = css`
     align-items: center;
     border-top: 3px solid green;
     font-size: 30px;
+    padding-top: 10px;
   }
 `;
 
@@ -175,9 +177,9 @@ export default function CheckOut(props) {
               <label>
                 Exp. Date:
                 <input
+                  required
                   maxLength="5"
                   placeholder="MM/YY"
-                  required
                   data-test-id="checkout-expiration-date"
                 />
               </label>

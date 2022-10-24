@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getCards } from '../../database/connect';
+import { getCards } from '../../database/cardSet';
 
 const indexWrapperStyle = css`
   display: flex;

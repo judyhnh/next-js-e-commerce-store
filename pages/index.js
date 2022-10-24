@@ -2,7 +2,6 @@ import { css, Global } from '@emotion/react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import Header from '../components/Header.js';
 
 const imgStyle = css`
   background-color: black;
@@ -10,6 +9,7 @@ const imgStyle = css`
   width: 100vw;
   height: 50vh;
   margin-top: 0;
+  margin-left: 300px;
 `;
 
 const contentContainer = css`
@@ -76,7 +76,7 @@ export default function Home() {
       />
 
       <div css={title}>
-        <h1>Welcome to bØØtcamp land...</h1>
+        <h1>Welcome to Game of Drones...</h1>
       </div>
       <div css={imgStyle}>
         <Image src="/droneThrone.png" width="500px" height="500px" />
