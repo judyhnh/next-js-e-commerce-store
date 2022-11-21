@@ -44,7 +44,7 @@ Welcome to game of drones. My fictional e-commerce store, that offers handmade t
 
 ## ▶ Deploy on Fly.io
 - Sign up on `Fly.io`
-- On the `Fly.io Tokens page`, generate a new Fly.io access token named GitHub Actions Deploy Token and copy it from the text box that appears - **it will only be shown once**
+- On the `Fly.io Tokens page`, generate a new Fly.io access token named **GitHub Actions Deploy Token** and copy it from the text box that appears - **it will only be shown once**
 - In your GitHub repo under `Settings → Secrets → Actions`, click the New repository secret button at the top right of the page and create a new token with the name FLY_API_TOKEN and the token you copied as the secret
 - On the command line, log in to Fly.io using the following command and enter your credentials in the browser window that appears:
 ```
