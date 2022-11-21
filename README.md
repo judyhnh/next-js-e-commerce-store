@@ -51,11 +51,35 @@ Welcome to game of drones. My fictional e-commerce store, that offers handmade t
 flyctl auth login
 ```
 - Create an app, specifying the name using only lowercase letters and dashes:
+```
 flyctl apps create --name <app name>
-- Create the Fly.io config files as demonstrated in the lecture (also available in the Next.js example repo)
-- Change your database/connect.ts as in the lecture: only run config() from dotenv-safe if the FLY_IO environment variable is not set
-- Change your next.config.js as in the lecture: disable linting and type checking on build, since we do this earlier in the GitHub Actions deploy process
-- Add database credentials using Fly.io secrets (the credentials will be randomly generated for security):
+```
+- Create the Fly.io config files 
+- Change your database/connect.ts
+- Change your next.config.js 
+- Add database credentials using `Fly.io secrets` (the credentials will be randomly generated for security):
+```
+flyctl secrets set PGHOST=localhost PGDATABASE=$(openssl rand -hex 16) PGUSERNAME=upleveled$(openssl rand -hex 16) PGPASSWORD=$(openssl rand -base64 32)
+```
+- If your app needs any additional environment variables such as API keys, also add them to the secrets using the following pattern:
+```
+flyctl secrets set <secret name>=<secret value>
+```
+- The Next.js documentation mentions exposing variables to the browser using variables prefixed with NEXT_PUBLIC_. Instead of using environment variables for this, we recommend declaring a JavaScript variable in your code because this information is not secret - it will be exposed to the browser. If you absolutely need to set a NEXT_PUBLIC_ environment variable, you can add it to your .env.production file.
+- Create a 1GB volume for the PostgreSQL database in the Frankfurt region:
+```
+flyctl volumes create postgres --size 1 --region fra
+```
+- Deploy the first version of the app:
+```
+flyctl deploy
+```
+
+
+
+
+
+
 
 ![goD screenshot](public/screenshot1.png)
 ![goD screenshot](public/screenshot2.png)
