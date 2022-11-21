@@ -1,8 +1,8 @@
 ![goD Logo](public/godLogo.png)
-## Description
+## ▶ Description
 Welcome to game of drones. My fictional e-commerce store, that offers handmade trading cards!
 
-## Functionalities
+## ▶ Functionalities
 - `landing page`
 - products page: with all cards displayed
 - a single page for each card with details
@@ -15,7 +15,7 @@ Welcome to game of drones. My fictional e-commerce store, that offers handmade t
 - `checkout page`
 - `thank you page`
 
-## Technologies
+## ▶ Technologies
 - Next.js
 - React.js
 - Postgres.js
@@ -25,7 +25,7 @@ Welcome to game of drones. My fictional e-commerce store, that offers handmade t
 - TypeScript
 - GitHub Actions
 
-## Setup instructions
+## ▶ Setup instructions
 
 - Clone the repository with `git clone <repo>`
 - Setup the database by downloading and installing PostgreSQL
