@@ -33,3 +33,15 @@ export function addCardToCart(id) {
   }
   return currentCart;
 }
+
+export function totalAmountOfCards(currentCart) {
+  return currentCart
+    .map((product) => product.cart)
+    .reduce((totalAmount, currentAmount) => totalAmount + currentAmount, 0);
+}
+
+export function totalSumOfCards(currentCart) {
+  return currentCart.reduce((accumulator, product) => {
+    return accumulator + product.price * product.cart;
+  }, 0);
+}

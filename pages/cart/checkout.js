@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { getCards } from '../../database/connect';
+import { getCards } from '../../database/cardSet';
 
 const pageContentWrapper = css`
   display: flex;
@@ -96,6 +96,7 @@ export default function CheckOut(props) {
     props.setCardCookieCart([]);
     router.push('/cart/thankyou').catch(() => {});
   };
+
   function totalSumOfCards() {
     return props.currentCart.reduce((accumulator, product) => {
       return accumulator + product.price * product.cart;
@@ -106,6 +107,7 @@ export default function CheckOut(props) {
       .map((product) => product.cart)
       .reduce((totalAmount, currentAmount) => totalAmount + currentAmount, 0);
   }
+
   const totalSum = totalSumOfCards(props.currentCardsCart);
   const totalAmount = totalAmountOfCards(props.currentCardsCart);
 

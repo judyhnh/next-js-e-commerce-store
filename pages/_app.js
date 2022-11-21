@@ -17,7 +17,6 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     setStringifiedCookie('cart', cardCookieCart);
   }, [cardCookieCart]);
-  console.log(cardCookieCart);
 
   return (
     <>

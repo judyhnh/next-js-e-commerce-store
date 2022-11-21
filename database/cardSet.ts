@@ -143,8 +143,24 @@ SELECT * FROM cards;
 
 export async function getCardById(id: number) {
   const [card] = await sql<Card[]>`
-    SELECT * FROM cards WHERE id = ${id}
+    SELECT
+      *
+    FROM
+      cards
+    WHERE
+      id = ${id}
     `;
 
+  return card;
+}
+
+export async function deleteCardById(id: number) {
+  const [card] = await sql<Card[]>`
+    DELETE FROM
+      cards
+    WHERE
+      id = ${id}
+    RETURNING *
+  `;
   return card;
 }
