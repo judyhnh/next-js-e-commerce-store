@@ -37,3 +37,6 @@ Welcome to game of drones. My fictional e-commerce store, that offers handmade t
 - Run `yarn install` in your command line
 - Run the migrations with `yarn migrate up`
 - Start the server by running `yarn dev`
+
+![goD screenshot](public/screenshot1.png)
+![goD screenshot](public/screenshot2.png)
