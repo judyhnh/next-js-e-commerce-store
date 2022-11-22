@@ -79,7 +79,12 @@ export default function Home() {
         <h1>Welcome to Game of Drones...</h1>
       </div>
       <div css={imgStyle}>
-        <Image src="/droneThrone.png" width="500px" height="500px" />
+        <Image
+          src="/droneThrone.png"
+          width="500px"
+          height="500px"
+          alt="throne made out of swords with flying drones in the background"
+        />
       </div>
       <div css={contentContainer}>
         <p>Are you ready to fight against drones?</p>
