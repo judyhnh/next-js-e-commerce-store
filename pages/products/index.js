@@ -101,8 +101,8 @@ export default function ProductIndex(props) {
                   >
                     <Image
                       src={set.src}
-                      width="200px"
-                      height="300px"
+                      width="200"
+                      height="300"
                       alt={set.alt}
                       className="imageHover"
                     />

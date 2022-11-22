@@ -79,7 +79,7 @@ export default function Header(props) {
           <p>[{totalCards}]</p>
         </div>
 
-        <Image src="/droneLogo.png" width="50px" height="50px" />
+        <Image src="/droneLogo.png" width="50" height="50" />
 
         <Link href="/">
           <div css={alignLeft}>Game of Drones</div>

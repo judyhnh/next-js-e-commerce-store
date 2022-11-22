@@ -81,8 +81,8 @@ export default function Home() {
       <div css={imgStyle}>
         <Image
           src="/droneThrone.png"
-          width="500px"
-          height="500px"
+          width="500"
+          height="500"
           alt="throne made out of swords with flying drones in the background"
         />
       </div>

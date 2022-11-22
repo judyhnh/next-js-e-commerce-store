@@ -103,6 +103,7 @@ const pageContentWrapper = css`
 export default function Card(props) {
   const [cartItem, setCartItem] = useState(1);
   const [cart, setCart] = useState(cartItem);
+  console.log(cart);
 
   const add = () => {
     setCartItem((count) => count + 1);
@@ -154,8 +155,8 @@ export default function Card(props) {
       <div css={cardSetStyles}>
         <Image
           src={props.card.src}
-          width="300px"
-          height="400px"
+          width="300"
+          height="400"
           alt={props.card.alt}
           data-test-id="product-image"
         />
