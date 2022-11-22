@@ -4,12 +4,14 @@ RUN apk add --no-cache libc6-compat yq --repository=http://dl-cdn.alpinelinux.or
 WORKDIR /app
 COPY . .
 RUN yq --inplace --output-format=json '.dependencies = .dependencies * (.devDependencies | to_entries | map(select(.key | test("^(typescript|@types/*|@upleveled/)"))) | from_entries)' package.json
+ENV FLY_IO true
 RUN yarn install --frozen-lockfile
 RUN yarn build
 
 # Initialize runner layer
 FROM node:18-alpine AS runner
 ENV NODE_ENV production
+ENV FLY_IO true
 # Install necessary tools
 RUN apk add bash postgresql
 WORKDIR /app
