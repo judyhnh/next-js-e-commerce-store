@@ -2007,7 +2007,7 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
-"@typescript-eslint/utils@5.43.0", "@typescript-eslint/utils@^5.10.0", "@typescript-eslint/utils@^5.13.0", "@typescript-eslint/utils@^5.36.2":
+"@typescript-eslint/utils@5.43.0", "@typescript-eslint/utils@5.44.0", "@typescript-eslint/utils@^5.10.0", "@typescript-eslint/utils@^5.13.0", "@typescript-eslint/utils@^5.36.2":
   version "5.43.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/utils/-/utils-5.43.0.tgz#00fdeea07811dbdf68774a6f6eacfee17fcc669f"
   integrity sha512-8nVpA6yX0sCjf7v/NDfeaOlyaIIqL7OaIGOWSPFqUKK59Gnumd3Wa+2l8oAaYO2lk0sO+SbWFWRSvhu8gLGv4A==
@@ -2017,20 +2017,6 @@
     "@typescript-eslint/scope-manager" "5.43.0"
     "@typescript-eslint/types" "5.43.0"
     "@typescript-eslint/typescript-estree" "5.43.0"
-    eslint-scope "^5.1.1"
-    eslint-utils "^3.0.0"
-    semver "^7.3.7"
-
-"@typescript-eslint/utils@5.44.0":
-  version "5.44.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/utils/-/utils-5.44.0.tgz#d733da4d79d6c30f1a68b531cdda1e0c1f00d52d"
-  integrity sha512-fMzA8LLQ189gaBjS0MZszw5HBdZgVwxVFShCO3QN+ws3GlPkcy9YuS3U4wkT6su0w+Byjq3mS3uamy9HE4Yfjw==
-  dependencies:
-    "@types/json-schema" "^7.0.9"
-    "@types/semver" "^7.3.12"
-    "@typescript-eslint/scope-manager" "5.44.0"
-    "@typescript-eslint/types" "5.44.0"
-    "@typescript-eslint/typescript-estree" "5.44.0"
     eslint-scope "^5.1.1"
     eslint-utils "^3.0.0"
     semver "^7.3.7"
@@ -5733,7 +5719,6 @@ postcss@^7.0.26:
 
 postgres@^3.3.0, "postgres@https://github.com/porsager/postgres":
   version "3.3.2"
-  uid "000d058fa988d7a0e4c5679a2f84cb83f14ff32f"
   resolved "https://github.com/porsager/postgres#000d058fa988d7a0e4c5679a2f84cb83f14ff32f"
 
 prebuild-install@^7.1.1:
