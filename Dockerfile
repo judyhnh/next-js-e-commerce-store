@@ -30,4 +30,8 @@ COPY --from=builder /app/.env.production ./
 COPY --from=builder /app/scripts ./scripts
 RUN chmod +x /app/scripts/fly-io-start.sh
 
+ENV NODE_ENV production
+ENV FLY_IO true
+ENV PORT 8080
+
 CMD ["./scripts/fly-io-start.sh"]
