@@ -28,6 +28,7 @@ Welcome to game of drones. My fictional e-commerce store, that offers handmade t
 - Playwright (E2E tests)
 - TypeScript
 - GitHub Actions
+- Lottie
 
 ## ▶ Setup instructions
 
