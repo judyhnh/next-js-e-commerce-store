@@ -22,7 +22,7 @@ Welcome to game of drones. My fictional e-commerce store, that offers handmade t
 
 - Next.js
 - React.js
-- Postgres.js
+- PostgreSQL
 - Emotion
 - Jest (Unit tests)
 - Playwright (E2E tests)
